@@ -13,6 +13,8 @@
 </head>
 
 <body >
+
+<script src="javascripts.js"></script>
    
 <h1 style="text-align:center;"><p id="corners1">NACHO NATION</p></h1>
 <div class="topnav">
@@ -33,70 +35,21 @@ class="center">
 
 Choose your corn team: <br>
 
-<button id ="blueCorn">Blue Corn</button><br> 
-<button id ="whiteCorn">White Corn</button><br>
-<button id ="yellowCorn">Yellow Corn</button><br>
+<button onClick="backgroundBlue()">Blue Corn</button><br> 
+<button onClick="backgroundWhite()">White Corn</button><br>
+<button onClick="backgroundYellow()">Yellow Corn</button><br>
 <div id = "background"></div>
 <br><br>
 How many servings of nachos have you had this year?<br>
 Servings: <input id="plates"> 
-<button id="platesSubmit">Submit</button><br><br>
+<button onClick="metric()">Submit</button><br><br>
 <div id="result"></div><br>
 <div id="result1"></div><br>
 <button onclick="starvingOrphans()">Click here to send nachos to starving orphans.</button><br><br>
 
 <p id="orphansFed"></p>
 
-<script>
 
-    function starvingOrphans() {
-        var text;
-        var orphansFed = prompt("How many plates (as a numeral) would you like to send?");
-        if (orphansFed != null) {
-    document.getElementById("orphansFed").innerHTML =
-    "You have fed " + orphansFed + " orphans.";
-        }
-        
-    }
-    
-
-    function backgroundYellow(){
-        var html = 'Welcome to team YellowCorn!';
-        document.getElementById('background').innerHTML = html;
-        document.getElementById('background').style.backgroundColor = "yellow";
-    }
-
-    function backgroundBlue(){
-        var html = 'Welcome to team BlueCorn!';
-        document.getElementById('background').innerHTML = html;
-        document.getElementById('background').style.backgroundColor = "blue";
-    }
-
-    function backgroundWhite(){
-        var html = 'Welcome to team WhiteCorn!';
-        document.getElementById('background').innerHTML = html;
-        document.getElementById('background').style.backgroundColor = "beige";
-    }
-    document.getElementById('blueCorn').addEventListener('click', backgroundBlue);
-    document.getElementById('yellowCorn').addEventListener('click', backgroundYellow);
-    document.getElementById('whiteCorn').addEventListener('click', backgroundWhite);
-
-    function metric() {
-        var plates = document.getElementById('plates').value;
-
-        var tons = plates * 0.00033433102;
-
-        var html1 = 'You have had ' + plates + '  servings?!';
-
-        var html2 = 'That is approximately ' + tons + ' tons of nachos.';
-
-        document.getElementById('result').innerHTML = html1;
-        document.getElementById('result1').innerHTML = html2;
-
-    }
-
-    document.getElementById('platesSubmit').addEventListener('click', metric);
-</script>
 
 <div class="clearfix">
 <img class="img2" src="https://raw.githubusercontent.com/ryanyinlee/reading-notes/main/pexels-photo-4968302.jpeg"
